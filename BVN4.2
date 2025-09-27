@@ -1,0 +1,22 @@
+plaintext = "nguyen thuy linh"
+k = 31  # thực chất = 31 % 26 = 5
+
+uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+lowercase = "abcdefghijklmnopqrstuvwxyz"
+ciphertext = ""
+
+for ch in plaintext:
+    if ch in uppercase:
+        p = uppercase.index(ch)
+        c = (p + k) % 26
+        ciphertext += uppercase[c]
+    elif ch in lowercase:
+        p = lowercase.index(ch)
+        c = (p + k) % 26
+        ciphertext += lowercase[c]
+    else:
+        ciphertext += ch
+
+print("Plaintext:", plaintext)
+print("k:", k)
+print("Ciphertext:", ciphertext)
